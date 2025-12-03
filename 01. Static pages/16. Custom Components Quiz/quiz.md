@@ -1,5 +1,5 @@
 1. What is a React component?
-
+    A function that returns React elements.
 
 2. What's wrong with this code?
 ```
@@ -9,6 +9,7 @@ function myComponent() {
     )
 }
 ```
+    It doesn't use Pascal case.
 
 3. What's wrong with this code?
 ```
@@ -22,3 +23,4 @@ function Header() {
 
 root.render(Header())
 ```
+    You would use root.render(<Header />) instead.
