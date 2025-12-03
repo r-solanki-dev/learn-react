@@ -1,5 +1,5 @@
 {
-  "name": "Scrim-s06ieoj",
+  "name": "scrim-s06ieoj",
   "description": "https://scrimba.com/learn-react-c0e/~05xi/s0kcn0j5kj/head",
   "scripts": {
     "start": "vite",
@@ -14,5 +14,9 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "*"
-  }
+  },
+  "version": "1.0.0",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
