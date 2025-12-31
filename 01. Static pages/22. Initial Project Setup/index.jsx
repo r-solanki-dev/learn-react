@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client"
-const root = createRoot(document.getElementById("root"))
+import App from "./App"
 
 /**
 Challenge: Project setup
 
-- Create an App component in a separate App.jsx file which is a sibling
+- DONE - Create an App component in a separate App.jsx file which is a sibling
   to this index.jsx file.
 - Create a `components` folder
 - Create the following components in separate files inside
@@ -22,4 +22,7 @@ Challenge: Project setup
   works if you haven't done it before.
 */
 
-root.render(/*App component rendered here*/)
+console.log(document.getElementById("root"))
+
+const root = createRoot(document.getElementById("root"))
+root.render(<App />)
