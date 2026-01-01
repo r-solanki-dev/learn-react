@@ -6,3 +6,22 @@ body {
     margin: 0;
 }
 
+header {
+    display: flex;
+}
+
+header img {
+    width: 3rem;
+}
+
+nav {
+    display:flex;
+    background-color: #21222A;
+    color: #61DAFB;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    align-items: center;
+    width: 100%;
+}
