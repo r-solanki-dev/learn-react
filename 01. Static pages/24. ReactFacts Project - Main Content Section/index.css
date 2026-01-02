@@ -29,3 +29,30 @@ nav > span {
     font-size: 1.4rem;
     font-weight: 700;
 }
+
+section {
+    background-color: #282D35;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+section > div {
+    padding-left: 27px;
+    padding-top: 58px;
+}
+
+section > div > span {
+    font-size: 39.06px;
+    font-weight: 700;
+}
+
+section > div > ul {
+    margin: 0px;
+    padding-top: 40px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+section > div > ul > li {
+    margin: 1rem 0;
+}
