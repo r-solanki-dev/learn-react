@@ -8,20 +8,25 @@ body {
 
 header {
     display: flex;
-}
-
-header img {
-    width: 3rem;
+    width: 100%;
+    background-color: #21222A;
+    color: #61DAFB;
 }
 
 nav {
+    align-items: center;
     display:flex;
-    background-color: #21222A;
-    color: #61DAFB;
+    margin: 1rem;
+}
+
+nav img {
+    width: 3rem;
+    margin: 10px;  
+}
+
+nav h1 {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    align-items: center;
-    width: 100%;
 }

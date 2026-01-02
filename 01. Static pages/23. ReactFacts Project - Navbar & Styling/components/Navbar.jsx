@@ -13,7 +13,7 @@ export default function Navbar() {
     return (
         <header>
             <nav>
-                <img src="../react-logo.png"/>
+                <img src="../react-logo.png" alt="React logo"/>
                 <h1>ReactFacts</h1>
             </nav>
         </header>
