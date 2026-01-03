@@ -38,21 +38,27 @@ section {
 
 section > div {
     padding-left: 27px;
-    padding-top: 58px;
+    padding-top: 32px;
 }
 
-section > div > span {
+section > div > h1 {
     font-size: 39.06px;
     font-weight: 700;
 }
 
-section > div > ul {
+.facts-list {
     margin: 0px;
-    padding-top: 40px;
     font-size: 16px;
     font-weight: 400;
+    max-width: 400px;
 }
 
-section > div > ul > li {
+.facts-list > li {
     margin: 1rem 0;
 }
+
+.facts-list > li::marker {
+    color: #61DAFB;
+    font-size: 1.5rem;
+}
+
