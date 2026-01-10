@@ -1,3 +1,25 @@
 html, body {
     margin: 0;
+    font-family: "Inter", "sans-serif";
+}
+
+header {
+    background-color: #F55A5A;
+    color: white;
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+header > img {
+    width: 2rem;
+    height: 2rem;
+}
+
+header > span {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    margin: 0.5rem;
 }
