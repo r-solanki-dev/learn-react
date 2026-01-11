@@ -3,6 +3,8 @@ html, body {
     font-family: Inter;
 }
 
+/* Header Stying */
+
 header {
     background: #F55A5A;
     display: flex;
@@ -22,22 +24,68 @@ header > h1 {
     font-weight: 500;
 }
 
+/* Entry Styling */
+
 .entry {
-    display: flex
+    display: flex;
+    padding: 18px 40px;
+    align-items: center;
 }
 
-.entry > img {
+.entry-image {
     width: 125px;
     height: 168px;
 }
 
+.information {
+    margin-left: 19px;
+    padding: 18px 0;
+    font-size: 0.75rem;
+}
+
+/* Details (marker, country, link) */
+
 .country {
-    font-size: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 0.15rem;
-    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0 4px;
 }
 
 .details {
+    align-items: center;
     display: flex;
+    font-weight: 300;
+}
+
+.maps-link {
+    color: #918E9B;
+    margin: 0 8px;
+}
+
+.marker {
+    width: .6rem;
+}
+
+/* Main Content (location, dates, description) */
+.location {
+    font-size: 25px;
+    margin: 4px 0;
+    padding: 4px 0;
+}
+
+.dates {
+    font-weight: 700;
+}
+
+.description {
+    color: #2B283A;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+hr {
+    border-color: #F5F5F5;
+    border-width: 1px;
+    width: 85%;
 }
