@@ -15,22 +15,37 @@ export default function App() {
         <main>
             <Joke
                 punchline="It's hard to explain puns to kleptomaniacs because they always take things literally."
+                upvotes={0}
+                downvotes={0}
+                isPun={false}
             />
             <Joke
                 setup="How did the hacker escape the police?"
                 punchline="He just ransomware!"
+                upvotes={0}
+                downvotes={0}
+                isPun={false}
             />
             <Joke
                 setup="Why don't pirates travel on mountain roads?"
                 punchline="Scurvy."
+                upvotes={0}
+                downvotes={0}
+                isPun={false}
             />
             <Joke
                 setup="Why do bees stay in the hive in the winter?"
                 punchline="Swarm."
+                upvotes={0}
+                downvotes={0}
+                isPun={false}
             />
             <Joke
                 setup="What's the best thing about Switzerland?"
                 punchline="I don't know, but the flag is a big plus!"
+                upvotes={0}
+                downvotes={0}
+                isPun={false}
             />
         </main>
     )
