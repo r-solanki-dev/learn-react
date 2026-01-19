@@ -1,26 +1,38 @@
 export default function Main() {
     const ingredients = ["Chicken", "Oregano", "Tomatoes"]
-    
+
     /**
-     * Review Challenge:
-     * Map over the list of ingredients and render them as list items
+     * Challenge:
+     * Add the new ingredient to the array of ingredients. Also, add a 
+     * console.log(ingredients) after adding the ingredient, because 
+     * **warning**: you aren't going to see the page update!
      * 
-     * Note: We're doing things a weird way here. Don't worry,
-     * we're building up to learning the right way 🙂
+     * Hint: this is a one-liner solution, so don't overthink it 😅
      */
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const newIngredient = formData.get("ingredient")
+        ingredients.push(newIngredient)
+        console.log(ingredients)
+    }
     
     return (
         <main>
-            <form className="add-ingredient-form">
+            <form className="add-ingredient-form" onSubmit={handleSubmit}>
                 <input 
-                    type="text"
-                    placeholder="e.g. oregano"
                     aria-label="Add ingredient"
+                    name="ingredient"
+                    placeholder="e.g. oregano"
+                    type="text"
                 />
-                <button>Add ingredient</button>
+                <button type="submit">Add ingredient</button>
             </form>
             <ul>
-                {/* Render ingredientsList here */}
+                {ingredients.map((item, index) => {
+                    return <li key={index}>{item}</li>
+                })}
             </ul>
         </main>
     )
