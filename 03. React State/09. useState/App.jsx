@@ -7,13 +7,13 @@ export default function App() {
      * some state initiated with React.useState()
      */
     
-    const result = React.useState("Hello")
-    console.log(result)
+    const [isImportant, setIsImportant] = React.useState("Yes")
+    console.log(isImportant)
     
     return (
         <main>
             <h1 className="title">Is state important to know?</h1>
-            <button className="value">Yes</button>
+            <button className="value">{isImportant}</button>
         </main>
     )
 }
