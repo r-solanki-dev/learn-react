@@ -2,6 +2,7 @@ import React from "react"
 import avatar from "./images/user.png"
 import starFilled from "./images/star-filled.png"
 import starEmpty from "./images/star-empty.png"
+import { preview } from "vite"
 
 export default function App() {
     const [contact, setContact] = React.useState({
@@ -17,6 +18,7 @@ export default function App() {
     function toggleFavorite() {
         setContact(prevContact => {
             return {
+                ...prevContact,
                 isFavorite: !prevContact.isFavorite
             }
         })
