@@ -10,7 +10,6 @@ function App() {
   
   function signUp(formData) {
     const email = formData.get("email")
-    console.log(email)
   }
   
   return (
