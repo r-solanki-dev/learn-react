@@ -1,7 +1,7 @@
 import React from "react"
 
 export default function App() {
-    const [messages, setMessages] = React.useState(["a", "b"])
+    const [messages, setMessages] = React.useState(["hi", "hello"])
     /**
      * Challenge:
      * - If there are no unread messages, display "You're all caught up!"
@@ -10,9 +10,24 @@ export default function App() {
      * - If there are > 1 unread messages, display "You have <n> unread
      *   messages" (plural)
      */
+
+    function displayMessageStatus() {
+        if (messages.length == 0) {
+            return <h1>You're all caught up!</h1>
+        }
+        else if (messages.length == 1) {
+            return <h1>You have 1 unread message.</h1>
+        }
+        else {
+            return <h1>You have {messages.length} unread messages.</h1>
+        }
+    }
+
     return (
-        <div>
-            <h1></h1>
-        </div>
+        <>
+            <div>
+                {displayMessageStatus()}
+            </div>
+        </>
     )
 }
