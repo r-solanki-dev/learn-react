@@ -9,7 +9,11 @@ function App() {
 
   function signUp(formData) {
     const data = Object.fromEntries(formData)
-    const dietaryData = 
+    const dietaryRestrictions = formData.getAll("dietaryRestrictions")
+    const allData = {...data, "dietaryRestrictions": dietaryRestrictions}
+    console.log(allData)
+
+    
   }
 
   return (
@@ -59,7 +63,7 @@ function App() {
         </fieldset>
 
         <label htmlFor="favColor">What is your favorite color?</label>
-        <select id="favColor" name="favColor" defaultValue="" required>
+        <select id="favColor" name="favColor" defaultValue="blue" required>
           <option value="" disabled>-- Choose a color --</option>
           <option value="red">Red</option>
           <option value="orange">Orange</option>
