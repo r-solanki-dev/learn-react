@@ -1,4 +1,5 @@
 import React from "react"
+import Recipe from "./Recipe"
 
 export default function Main() {
 
@@ -27,6 +28,14 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
+    const [recipeShown, setRecipeShown] = React.useState(false)
+
+    function toggleRecipeShown() {
+        setRecipeShown(prevShowRecipe => !prevShowRecipe)
+        console.log(recipeShown)
+
+    }
+
     return (
         <main>
             <form action={addIngredient} className="add-ingredient-form">
@@ -46,10 +55,10 @@ export default function Main() {
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients.</p>
                     </div>
-                    <button>Get a recipe</button>
+                    <button onClick={toggleRecipeShown}>Get a recipe</button>
                 </div>}
             </section>}
-            {/** Paste recipeCode.md contents here */}
+            {recipeShown && <Recipe/>}
         </main>
     )
 }
