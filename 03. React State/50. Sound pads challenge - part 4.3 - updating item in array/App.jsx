@@ -6,7 +6,13 @@ export default function App() {
     const [pads, setPads] = React.useState(padsData)
     
     function toggle(id) {
-        console.log(id)
+        setPads(prevPads => 
+            prevPads.map((pad) => {
+                return pad.id === id ? {...pad, on: !pad.on} : pad
+                
+            })
+        )
+        console.log(pads)
         /**
          * Challenge:
          * Call setPads to update the state of the one pad that was
@@ -20,7 +26,13 @@ export default function App() {
     }
     
     const buttonElements = pads.map(pad => (
-        <Pad toggle={toggle} id={pad.id} key={pad.id} color={pad.color} on={pad.on}/>
+        <Pad 
+            toggle={toggle} 
+            id={pad.id} 
+            key={pad.id} 
+            color={pad.color} 
+            on={pad.on}
+        />
     ))
     
     return (
