@@ -1,8 +1,9 @@
 import React from "react"
 import avatar from "./icons/user.png"
 
-export default function Header() {
-    const [userName, setUserName] = React.useState("Joe")
+export default function Header(props) {
+
+    const userName = props.name
 
     return (
         <header>
