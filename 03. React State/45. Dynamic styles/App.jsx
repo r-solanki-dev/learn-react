@@ -15,9 +15,8 @@ export default function App(props) {
     const buttonElements = pads.map(pad => 
         {
             const styles = {
-                backgroundColor: pad.color
+                backgroundColor: darkMode ? "#222222" : "#cccccc"
             }
-
             return (
                 <button 
                     key={pad.id}
@@ -25,13 +24,9 @@ export default function App(props) {
                 ></button>
         )}
     )
-
-    const styles = {
-        backgroundColor: darkMode ? "#222222" : "#cccccc"
-    }
     
     return (
-        <main style={styles}>
+        <main>
             <div className="pad-container">
                 {buttonElements}
             </div>
