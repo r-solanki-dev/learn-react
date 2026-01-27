@@ -1,8 +1,9 @@
 import React from "react"
 import padsData from "./pads"
 
-export default function App() {
+export default function App(props) {
     const [pads, setPads] = React.useState(padsData)
+    const darkMode = props.darkMode
     
     /**
      * Challenge: use a ternary to determine the backgroundColor
@@ -11,12 +12,26 @@ export default function App() {
      * If darkMode is false, set them to "#cccccc"
      */
     
-    const buttonElements = pads.map(pad => (
-        <button key={pad.id}></button>
-    ))
+    const buttonElements = pads.map(pad => 
+        {
+            const styles = {
+                backgroundColor: pad.color
+            }
+
+            return (
+                <button 
+                    key={pad.id}
+                    style={styles}
+                ></button>
+        )}
+    )
+
+    const styles = {
+        backgroundColor: darkMode ? "#222222" : "#cccccc"
+    }
     
     return (
-        <main>
+        <main style={styles}>
             <div className="pad-container">
                 {buttonElements}
             </div>
