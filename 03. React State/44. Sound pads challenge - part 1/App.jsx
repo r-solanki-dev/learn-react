@@ -1,3 +1,4 @@
+import { useState } from "react"
 import pads from "./pads"
 
 export default function App() {
@@ -10,10 +11,22 @@ export default function App() {
      *    (Don't worry about using the "on" or "color" 
      *    properties yet)
      */
+
+    const [padList, setPadList] = useState(pads)
+
+    console.log(padList)
+
+    function renderButtons() {
+        return padList.map(buttonData => 
+            <button 
+                key={buttonData.id}
+            ></button>)
+    }
+
     return (
         <main>
             <div className="pad-container">
-                {/* <button>s go here */}
+                {renderButtons()}
             </div>
         </main>
     )
