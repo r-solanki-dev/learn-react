@@ -17,10 +17,13 @@ import { getRecipeFromChefClaude, getRecipeFromMistral } from "./ai"
  *    the app. (I don't mean between refreshes of your mini-browser.
  *    You don't need to save this to localStorage or anything more permanent
  *    than in React's memory for now.)
+ *    
+ *    By putting the recipe in React state
  *  
  * 
  * 2. What action from the user should trigger getting the recipe?
  * 
+ *    The Get a Recipe button
  */
 
 export default function Main() {
