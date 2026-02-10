@@ -22,9 +22,8 @@ import { getRecipeFromChefClaude } from "./ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
-        ["carrot", "ginger", "cabbage", "garlic"]
+        ["corn", "onion", "bell pepper", "lime"]
     )
-    // const [recipeShown, setRecipeShown] = React.useState(false)
 
     const [recipe, setRecipe] = React.useState(undefined)
 
