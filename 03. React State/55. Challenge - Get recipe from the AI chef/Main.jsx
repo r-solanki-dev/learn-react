@@ -1,7 +1,7 @@
 import React from "react"
 import IngredientsList from "./components/IngredientsList"
 import ClaudeRecipe from "./components/ClaudeRecipe"
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "./ai"
+import { getRecipeFromChefClaude } from "./ai"
 
 /**
  * Challenge: Get a recipe from the AI!
@@ -22,9 +22,11 @@ import { getRecipeFromChefClaude, getRecipeFromMistral } from "./ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
-        ["all the main spices", "pasta", "ground beef", "tomato paste"]
+        ["carrot", "ginger", "cabbage", "garlic"]
     )
-    const [recipeShown, setRecipeShown] = React.useState(false)
+    // const [recipeShown, setRecipeShown] = React.useState(false)
+
+    const [recipe, setRecipe] = React.useState(undefined)
 
     function toggleRecipeShown() {
         setRecipeShown(prevShown => !prevShown)
@@ -33,6 +35,15 @@ export default function Main() {
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+    }
+
+    function getClaudeRecipe() {
+        console.log("Called the function from <Main/>")
+        const claudeResponse = getRecipeFromChefClaude(ingredients)
+            .then((response) => {
+                console.log(response)
+                setRecipe(response)
+            })
     }
 
     return (
@@ -51,10 +62,11 @@ export default function Main() {
                 <IngredientsList
                     ingredients={ingredients}
                     toggleRecipeShown={toggleRecipeShown}
+                    getClaudeRecipe={getClaudeRecipe}
                 />
             }
 
-            {recipeShown && <ClaudeRecipe />}
+            {recipe ? <ClaudeRecipe content={recipe}/> : null}
         </main>
     )
 }
