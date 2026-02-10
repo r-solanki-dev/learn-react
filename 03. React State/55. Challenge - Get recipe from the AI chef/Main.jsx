@@ -36,13 +36,10 @@ export default function Main() {
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
 
-    function getClaudeRecipe() {
+    async function getClaudeRecipe() {
         console.log("Called the function from <Main/>")
-        const claudeResponse = getRecipeFromChefClaude(ingredients)
-            .then((response) => {
-                console.log(response)
-                setRecipe(response)
-            })
+        const claudeResponse = await getRecipeFromChefClaude(ingredients)
+        setRecipe(claudeResponse)
     }
 
     return (
