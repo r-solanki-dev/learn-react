@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown'
+
 /**
  * Challenge: See if you can figure out how to use the
  * react-markdown package to render `props.recipe` as React
@@ -11,9 +13,11 @@
  */
 
 export default function ClaudeRecipe(props) {
+    const recipe = props.recipe
     return (
-        <section>
-            {props.recipe}
+        <section className='suggested-recipe-container'>
+            <h2>Chef Claude Recommends:</h2>
+            <ReactMarkdown>{props.recipe}</ReactMarkdown>
         </section>
     )
 }
