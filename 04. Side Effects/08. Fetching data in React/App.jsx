@@ -2,6 +2,8 @@ import React from "react"
 
 export default function App(props) {
     const [starWarsData, setStarWarsData] = React.useState(null)
+
+    console.log("Rendered!")
     
     /**
      * Challenge:
@@ -10,13 +12,13 @@ export default function App(props) {
      * object inside the `<pre>` element with the data)
      */
     
-    fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        .then(data => console.log(data))
+    // fetch("https://swapi.dev/api/people/1")
+    //     .then(res => res.json())
+    //     .then(data => setStarWarsData(data))
     
     return (
         <div>
-            <pre>{JSON.stringify({ name: "Luke" }, null, 2)}</pre>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
         </div>
     )
 }
