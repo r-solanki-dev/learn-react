@@ -1,11 +1,15 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Main() {
+    const url = "https://api.imgflip.com/get_memes"
+
     const [meme, setMeme] = useState({
         topText: "One does not simply",
         bottomText: "Walk into Mordor",
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
+
+    const [memeList, setMemeList] = useState(null)
     
     /**
      * Challenge:
@@ -22,8 +26,13 @@ export default function Main() {
      * Instead, use `.then()` to resolve the promises
      * from using `fetch`. We'll learn why after this challenge.
      */
-    
-    
+
+    useEffect(() => {
+        console.log("Effect ran")
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setMemeList(data.data.memes))
+    }, [])
     
     function handleChange(event) {
         const {value, name} = event.currentTarget
