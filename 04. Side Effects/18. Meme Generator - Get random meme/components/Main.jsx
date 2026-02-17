@@ -13,6 +13,15 @@ export default function Main() {
             .then(res => res.json())
             .then(data => setAllMemes(data.data.memes))
     }, [])
+
+    function setRandomMeme() {
+        const randInt = (Math.floor(Math.random() * 101))
+        const url = allMemes[randInt].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            imageUrl: url
+        }))
+    }
     
     /**
      * Challenge: Get a random image from the array of
@@ -52,7 +61,9 @@ export default function Main() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={setRandomMeme}>
+                    Get a new meme image 🖼
+                </button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
