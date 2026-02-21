@@ -15,6 +15,12 @@ export default function Main() {
      * ONLY AFTER the ClaudeRecipe section is rendered to the page 
      * (i.e. when `recipe` is not an empty string). How can we do that?
      */
+
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView()
+        }
+    }, [recipe])
     
 
     async function getRecipe() {
