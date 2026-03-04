@@ -1,5 +1,8 @@
 export default function Die(props) {
+
     return (
-        <button>{props.value}</button>
+        <button 
+            className={props.isHeld == true ? "held" : ""}
+        >{props.value}</button>
     )
 }
