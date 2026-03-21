@@ -17,6 +17,10 @@ export default function App() {
     
     const [dice, setDice] = useState(generateAllNewDice())
 
+    function hold(id) {
+        console.log(id)
+    }
+
     function generateAllNewDice() {
         return new Array(10)
             .fill(0)
@@ -32,7 +36,7 @@ export default function App() {
     }
 
     const diceElements = dice.map(dieObj => (
-        <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld}/>)
+        <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld} onClick={hold} id={dieObj.id}/>)
     )
 
     return (
