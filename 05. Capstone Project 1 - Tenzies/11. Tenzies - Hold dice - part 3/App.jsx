@@ -9,7 +9,7 @@ export default function App() {
         return new Array(10)
             .fill(0)
             .map(() => ({
-                value: Math.ceil(Math.random() * 6),
+                value: rollDie(),
                 isHeld: false,
                 id: nanoid()
             }))
@@ -24,8 +24,14 @@ export default function App() {
      * just updating the `value` property of the die object.
      */
 
+    function rollDie() {
+        return Math.ceil(Math.random() * 6)
+    }
+
     function rollDice() {
-        setDice(generateAllNewDice())
+        setDice(oldDice => oldDice.map(die =>
+            die.isHeld == false ? {...die, value: rollDie()} : die
+        ))
     }
 
     function hold(id) {
