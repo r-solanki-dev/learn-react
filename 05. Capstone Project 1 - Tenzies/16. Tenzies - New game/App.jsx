@@ -19,10 +19,9 @@ export default function App() {
             }))
     }
     
-    /**
-     * Challenge: Allow the user to play a new game when the
-     * button is clicked
-     */
+    function newGame() {
+        setDice(generateAllNewDice())
+    }
 
     function rollDice() {
         setDice(oldDice => oldDice.map(die =>
@@ -57,9 +56,15 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button className="roll-dice" onClick={rollDice}>
-                {gameWon ? "New Game" : "Roll"}
-            </button>
+            {
+                gameWon ? 
+                <button className="roll-dice" onClick={newGame}>
+                    New game
+                </button> : 
+                <button className="roll-dice" onClick={rollDice}>
+                    Roll
+                </button>
+            }
         </main>
     )
 }
