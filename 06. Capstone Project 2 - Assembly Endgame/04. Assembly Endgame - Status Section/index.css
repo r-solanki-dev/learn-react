@@ -28,3 +28,26 @@ header > p {
     max-width: 350px;
     color: #8E8E8E;
 }
+
+.status {
+    background-color: #10A95B;
+    border-radius: 4px;
+    padding: 6px;
+    text-align: center;
+}
+
+.status > h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #F9F4DA;
+    margin: 0px;
+
+}
+
+.status > h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #F9F4DA;
+    margin: 0px;
+
+}

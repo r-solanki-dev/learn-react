@@ -17,6 +17,10 @@ export default function AssemblyEndgame() {
                 <p>Guess the word within 8 attempts to keep the 
                 programming world safe from Assembly!</p>
             </header>
+            <div className="status">
+                <h1>You win!</h1>
+                <h3>Well done! 🎉</h3>
+            </div>
         </main>
     )
 }
