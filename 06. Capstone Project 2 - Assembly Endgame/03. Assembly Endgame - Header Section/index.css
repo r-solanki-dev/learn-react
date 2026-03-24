@@ -12,3 +12,28 @@ body {
     display: flex;
     justify-content: center;
 }
+
+main {
+
+}
+
+.headline {
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    max-width: 352px;
+}
+
+.title {
+    color: #F9F4DA;
+    font-size: 20;
+    margin-bottom: 4px;
+}
+
+.subtext {
+    color: #8E8E8E;
+    font-size: 14;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}

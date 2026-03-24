@@ -10,7 +10,10 @@ import React from "react"
 export default function Hangman() {
     return (
         <main>
-            Game goes here
+            <div className="headline">
+                <p className="title">Assembly: Endgame</p>
+                <p className="subtext">Guess the word in under 8 attempts to keep the programming world safe from Assembly!</p>
+            </div>
         </main>
     )
 }
