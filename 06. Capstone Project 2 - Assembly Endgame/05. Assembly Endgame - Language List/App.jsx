@@ -1,4 +1,5 @@
 import React from "react"
+import { languages } from "./languages"
 
 /**
  * Goal: Build out the main parts of our app
@@ -12,7 +13,24 @@ import React from "react"
  * to layout the languages.
  */
 
+function LanguageCard(props) {
+
+    const languageStyle = {
+        color: props.langObj.color,
+        backgroundColor: props.langObj.backgroundColor
+    }
+
+    return (
+        <span style={languageStyle}>
+            {props.langObj.name}
+        </span>
+    )
+}
+
 export default function AssemblyEndgame() {
+
+    const [languagesList, setLanguagesList] = React.useState(languages)
+
     return (
         <main>
             <header>
@@ -23,6 +41,14 @@ export default function AssemblyEndgame() {
             <section className="game-status">
                 <h2>You win!</h2>
                 <p>Well done! 🎉</p>
+            </section>
+            <section className="language-list">
+                {languagesList.map(lang =>
+                    <LanguageCard
+                        key={lang.name}
+                        langObj={lang}
+                    />
+                )}
             </section>
         </main>
     )

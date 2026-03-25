@@ -15,6 +15,7 @@ body {
 
 header {
     text-align: center;
+    justify-items: center;
 }
 
 header > h1 {
@@ -45,4 +46,21 @@ section.game-status > p {
 section.game-status > h2 {
     font-size: 1.25rem;
     margin: 5px
+}
+
+section.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5px;
+    justify-content: center;
+    max-width: 350px;
+}
+
+section.language-list > span {
+    border: none;
+    border-radius: 3px;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    font-size: 12;
+    font-weight: 500;
+    padding: 4.5px;
 }
