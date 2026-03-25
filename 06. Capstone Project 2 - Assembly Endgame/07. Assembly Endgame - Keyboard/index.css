@@ -53,7 +53,7 @@ section.language-chips {
     flex-wrap: wrap;
     gap: 5px;
     justify-content: center;
-    max-width: 350px;
+    /* max-width: 350px; */
     margin-bottom: 36px;
 }
 
@@ -78,4 +78,26 @@ section.word > span {
     font-size: 1.125rem;
     border-bottom: 1px solid #F9F4DA;
     
+}
+
+section.keyboard {
+    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-block: 30px;
+}
+
+section.keyboard > button {
+    height: 40px;
+    width: 40px;
+    background-color: #FCBA29;
+    color: #1E1E1E;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }

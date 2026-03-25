@@ -34,6 +34,10 @@ export default function AssemblyEndgame() {
         <span key={index}>{letter.toUpperCase()}</span>
     ))
 
+    const keyboardElement = alphabet.split("").map((key, index) => (
+        <button key={index}>{key.toUpperCase()}</button>
+    ))
+
     return (
         <main>
             <header>
@@ -50,6 +54,9 @@ export default function AssemblyEndgame() {
             </section>
             <section className="word">
                 {letterElements}
+            </section>
+            <section className="keyboard">
+                {keyboardElement}
             </section>
         </main>
     )
