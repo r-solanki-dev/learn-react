@@ -31,6 +31,16 @@ export default function AssemblyEndgame() {
             </span>
         )
     })
+
+    const [currentWord, setCurrentWord] = React.useState("react")
+
+    const letterElements = currentWord.split("").map((letter, index) => {
+        return (
+            <span className="letter" key={index}>
+                {letter}
+            </span>
+        )
+    })
     
     return (
         <main>
@@ -45,6 +55,9 @@ export default function AssemblyEndgame() {
             </section>
             <section className="language-chips">
                 {languageElements}
+            </section>
+            <section className="letter-display">
+                {letterElements}
             </section>
         </main>
     )

@@ -15,6 +15,7 @@ body {
 
 header {
     text-align: center;
+    justify-items: center;
 }
 
 header > h1 {
@@ -59,4 +60,24 @@ section.language-chips {
 span.chip {
     border-radius: 3px;
     padding: 4.5px;
+}
+
+section.letter-display {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+span.letter {
+    align-items: center;
+    background-color: #323232;
+    border-bottom: 1px solid #F9F4DA;
+    display: flex;
+    font-size: 18px;
+    font-weight: 800;
+    height: 40px;
+    justify-content: center;
+    margin-block: 30px;
+    text-transform: capitalize;
+    width: 40px;
 }
