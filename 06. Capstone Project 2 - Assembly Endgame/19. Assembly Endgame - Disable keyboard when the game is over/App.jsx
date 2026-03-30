@@ -72,7 +72,7 @@ export default function AssemblyEndgame() {
         const isWrong = isGuessed && !currentWord.includes(letter)
         const className = clsx({
             correct: isCorrect,
-            wrong: isWrong
+            wrong: isWrong,
         })
 
         return (
@@ -80,6 +80,7 @@ export default function AssemblyEndgame() {
                 className={className}
                 key={letter}
                 onClick={() => addGuessedLetter(letter)}
+                disabled={isGameOver}
             >
                 {letter.toUpperCase()}
             </button>
