@@ -18,7 +18,7 @@ import { getFarewellText, getRandomWord } from "./utils"
 
 export default function AssemblyEndgame() {
     // State values
-    const [currentWord, setCurrentWord] = useState(() => getRandomWord())
+    const [currentWord, setCurrentWord] = useState(getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
 
     // Derived values
@@ -31,6 +31,11 @@ export default function AssemblyEndgame() {
     const isGameOver = isGameWon || isGameLost
     const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+
+    function setNewGame() {
+        setCurrentWord(getRandomWord())
+        setGuessedLetters([])
+    }
 
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -172,7 +177,10 @@ export default function AssemblyEndgame() {
                 {keyboardElements}
             </section>
 
-            {isGameOver && <button className="new-game">New Game</button>}
+            {isGameOver && <button 
+                className="new-game"
+                onClick={setNewGame}
+            >New Game</button>}
         </main>
     )
 }
