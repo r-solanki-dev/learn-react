@@ -1,6 +1,8 @@
 import { words } from "./words"
 
-// Your function here
+export function selectRandomWord() {
+    return words[Math.floor(Math.random() * words.length)]
+}
 
 export function getFarewellText(language) {
     const options = [
