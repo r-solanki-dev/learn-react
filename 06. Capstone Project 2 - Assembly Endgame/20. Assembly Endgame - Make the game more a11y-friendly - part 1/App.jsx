@@ -80,6 +80,7 @@ export default function AssemblyEndgame() {
                 className={className}
                 key={letter}
                 disabled={isGameOver}
+                aria-disabled={guessedLetters.includes(letter)}
                 onClick={() => addGuessedLetter(letter)}
             >
                 {letter.toUpperCase()}
@@ -130,9 +131,13 @@ export default function AssemblyEndgame() {
                 programming world safe from Assembly!</p>
             </header>
 
-            <section className={gameStatusClass}>
+            <section 
+                aria-live="polite"
+                role="status"
+                className={gameStatusClass}
+            >
                 {renderGameStatus()}
-            </section>
+            </section> 
 
             <section className="language-chips">
                 {languageElements}
@@ -140,6 +145,16 @@ export default function AssemblyEndgame() {
 
             <section className="word">
                 {letterElements}
+            </section>
+
+            <section 
+                className="sr-only"
+                aria-live="polite"
+                role="status"
+            >
+                <p>Current word: {currentWord.split("").map(letter => 
+                guessedLetters.includes(letter) ? letter + "." : "blank.")
+                .join(" ")}</p>
             </section>
 
             <section className="keyboard">
